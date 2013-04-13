@@ -5,7 +5,7 @@ var server = "localhost";
 var port = 9999;
 // Le port a utiliser
 var socket;
-var install;
+var install = "COPY";
 
 // La fonction connect permet d'initialiser la connexion à travers
 // la variable sokcet déclaré plus haut.
@@ -55,26 +55,26 @@ $(document).ready(function() {
 
 	connect();
 
-	 $("#copy").click(function() {
-		 install = "COPY";
-	 }
+	$("#copy").click(function() {
+		install = "COPY";
+	});
 
-	 $("#boot").click(function() {
-	 	install = "BOOT";
-	 }
+	$("#boot").click(function() {
+		install = "BOOT";
+	});
 
 	$("#ubuntu").click(function() {
-		$("#install").css('display': 'block');
+		$("#install").fadeIn(500).delay(3000).fadeOut('slow');
 		sendCMD(install + ":UBUNTU");
 	});
 
 	$("#fedora").click(function() {
-		$("#install").css('display': 'block');
+		$("#install").fadeIn(500).delay(3000).fadeOut('slow');
 		sendCMD(install + ":FEDORA");
 	});
 
 	$("#mint").click(function() {
-		$("#install").css('display': 'block');
+		$("#install").fadeIn(500).delay(3000).fadeOut('slow');
 		sendCMD(install + ":MINT");
 	});
 
